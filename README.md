@@ -91,4 +91,4 @@ save_path：存放结果的 txt 文件路径
 
 ## rknn 模型推理
 
-同上，编译可执行文件后，运行 `./yolo_detect <model_path> <image_path>` 对单张输入图像进行检测，输出保存到 out.png。
+同上，编译可执行文件后，运行 `./rknn_detect <model_path> <image_path>` 对单张输入图像进行检测，输出保存到 out.png。
