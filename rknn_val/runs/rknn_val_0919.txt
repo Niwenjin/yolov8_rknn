@@ -1,0 +1,84 @@
+Threshold: 0.30
+Class 0: Count = 66, corr = 62, err = 10
+Class 1: Count = 6, corr = 5, err = 0
+Class 2: Count = 950, corr = 852, err = 138
+Class 3: Count = 946, corr = 893, err = 70
+Class 4: Count = 2093, corr = 1864, err = 218
+Class 5: Count = 276, corr = 258, err = 16
+Class 6: Count = 171, corr = 156, err = 7
+Class 7: Count = 415, corr = 359, err = 71
+Class 8: Count = 227, corr = 214, err = 19
+total: Count = 5150, corr = 4663, err = 549
+
+Threshold: 0.40
+Class 0: Count = 66, corr = 61, err = 8
+Class 1: Count = 6, corr = 5, err = 0
+Class 2: Count = 950, corr = 837, err = 102
+Class 3: Count = 946, corr = 883, err = 59
+Class 4: Count = 2093, corr = 1822, err = 151
+Class 5: Count = 276, corr = 257, err = 9
+Class 6: Count = 171, corr = 154, err = 7
+Class 7: Count = 415, corr = 349, err = 48
+Class 8: Count = 227, corr = 213, err = 15
+total: Count = 5150, corr = 4581, err = 399
+
+Threshold: 0.50
+Class 0: Count = 66, corr = 60, err = 7
+Class 1: Count = 6, corr = 5, err = 0
+Class 2: Count = 950, corr = 813, err = 77
+Class 3: Count = 946, corr = 874, err = 37
+Class 4: Count = 2093, corr = 1743, err = 116
+Class 5: Count = 276, corr = 257, err = 6
+Class 6: Count = 171, corr = 151, err = 3
+Class 7: Count = 415, corr = 329, err = 34
+Class 8: Count = 227, corr = 213, err = 13
+total: Count = 5150, corr = 4445, err = 293
+
+Threshold: 0.60
+Class 0: Count = 66, corr = 57, err = 7
+Class 1: Count = 6, corr = 5, err = 0
+Class 2: Count = 950, corr = 778, err = 50
+Class 3: Count = 946, corr = 857, err = 26
+Class 4: Count = 2093, corr = 1600, err = 78
+Class 5: Count = 276, corr = 255, err = 6
+Class 6: Count = 171, corr = 149, err = 3
+Class 7: Count = 415, corr = 294, err = 17
+Class 8: Count = 227, corr = 204, err = 12
+total: Count = 5150, corr = 4199, err = 199
+
+Threshold: 0.70
+Class 0: Count = 66, corr = 53, err = 5
+Class 1: Count = 6, corr = 4, err = 0
+Class 2: Count = 950, corr = 680, err = 32
+Class 3: Count = 946, corr = 804, err = 16
+Class 4: Count = 2093, corr = 1336, err = 43
+Class 5: Count = 276, corr = 253, err = 4
+Class 6: Count = 171, corr = 143, err = 3
+Class 7: Count = 415, corr = 205, err = 8
+Class 8: Count = 227, corr = 187, err = 10
+total: Count = 5150, corr = 3665, err = 121
+
+Threshold: 0.80
+Class 0: Count = 66, corr = 47, err = 4
+Class 1: Count = 6, corr = 4, err = 0
+Class 2: Count = 950, corr = 447, err = 14
+Class 3: Count = 946, corr = 698, err = 8
+Class 4: Count = 2093, corr = 763, err = 11
+Class 5: Count = 276, corr = 233, err = 3
+Class 6: Count = 171, corr = 134, err = 1
+Class 7: Count = 415, corr = 83, err = 3
+Class 8: Count = 227, corr = 91, err = 5
+total: Count = 5150, corr = 2500, err = 49
+
+Threshold: 0.90
+Class 0: Count = 66, corr = 32, err = 3
+Class 1: Count = 6, corr = 4, err = 0
+Class 2: Count = 950, corr = 176, err = 3
+Class 3: Count = 946, corr = 318, err = 3
+Class 4: Count = 2093, corr = 107, err = 0
+Class 5: Count = 276, corr = 130, err = 0
+Class 6: Count = 171, corr = 73, err = 1
+Class 7: Count = 415, corr = 5, err = 0
+Class 8: Count = 227, corr = 0, err = 0
+total: Count = 5150, corr = 845, err = 10
+

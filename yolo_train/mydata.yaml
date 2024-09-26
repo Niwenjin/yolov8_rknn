@@ -1,0 +1,9 @@
+train: /home/nwj/data/train
+val: /home/nwj/data/val
+# test: /home/nwj/rknn/ultralytics_yolov8/data/test
+
+# number of classes
+nc: 9
+
+# class names
+names: [ '台湾独立旗','翠青旗','台湾旗','青天白日旗','雪山狮子旗', '港英旗（龙狮旗）', '黑紫荆旗', '东突旗', '蒙独旗' ]
