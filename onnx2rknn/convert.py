@@ -1,7 +1,7 @@
 import sys
 from rknn.api import RKNN
 
-DATASET_PATH = 'model/yolov8n_flag_0906.onnx'
+DATASET_PATH = 'dataset'
 DEFAULT_RKNN_PATH = 'model/yolov8.rknn'
 DEFAULT_QUANT = True
 

@@ -41,33 +41,14 @@ names: ["class_0", "class_1", "class_2", "class_3"]
 
 在 conda 环境下执行 python train.py，开始训练。
 
-## 将 pt 模型导出为 onnx 模型
-
-```sh
-$ cd /path/to/ultralytics
-```
-
-修改 ./ultralytics/cfg/default.yaml 中 `model`项为 .pt 模型文件路径。
-
-执行 python 脚本，生成 ONNX 模型：
-
-```sh
-$ export PYTHONPATH=./
-$ python ./ultralytics/engine/exporter.py
-```
-
-## 将 onnx 模型转换为 rknn 模型
+## 将 pt 模型转换为 rknn 模型
 
 安装[rknn_toolkit2](https://github.com/airockchip/rknn-toolkit2.git)环境，python 验证`from rknn.api import RKNN`安装成功。
 
-```sh
-$ cd /path/to/onnx2rknn
-```
-
-执行 convert.py 脚本将 onnx 模型转换为 rknn 模型：
+先激活 rknn 环境，再执行脚本将 pt 模型转换为 rknn 模型，onnx 模型和目标 rknn 模型将生成在同一目录下：
 
 ```sh
-python convert.py onnx_model_path rk3588 fp output_rknn_path
+./pt2rknn.sh <model_path>
 ```
 
 ## rknn 模型的 mAP 精度验证
