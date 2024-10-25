@@ -1,11 +1,12 @@
 #!/bin/bash
 
-if [ "$#" -ne 1 ]; then
-    echo "Usage: $0 <model_file>"
+if [ "$#" -ne 2 ]; then
+    echo "Usage: $0 <model_file> <platform>"
     exit 1
 fi
 
 MODEL_FILE=$1
+PLATFORM=$2
 BASE_DIR=$(dirname "$0")
 ONNX_FILE="${MODEL_FILE%.*}.onnx"
 
@@ -21,7 +22,7 @@ fi
 
 # 进入onnx2rknn目录并转换模型
 cd "../onnx2rknn"
-python convert.py "$ONNX_FILE" rk3588 fp "${MODEL_FILE%.*}.rknn"
+python convert.py "$ONNX_FILE" "$PLATFORM" fp "${MODEL_FILE%.*}.rknn"
 
 if [ $? -ne 0 ]; then
     echo "Model conversion failed."

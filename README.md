@@ -2,10 +2,11 @@
 
 ## YOLO 模型的训练
 
-创建并激活 conda 环境，安装 YOLO 官方库 ultralytics 及其他依赖。
+创建并激活 conda 环境，安装经过修改的 YOLO 官方库 ultralytics 及其他依赖。
 
 ```sh
-$ pip install ultralytics
+$ cd ultralytics
+$ pip install -e .
 ```
 
 创建数据集，目录结构如下：
@@ -37,18 +38,42 @@ nc: 4
 names: ["class_0", "class_1", "class_2", "class_3"]
 ```
 
-修改 train.py，参考[官方文档](https://docs.ultralytics.com/modes/train/)设置训练参数。
+进入 yolo_train 目录，修改 train.py，参考[官方文档](https://docs.ultralytics.com/modes/train/)设置训练参数。
+
+负样本参数设置：
+
+-   neg_dir: 负样本目录
+-   neg_num: 负样本加入数。正数时固定放入 n 个负样本；负数时放入随机 0 ～ abs(n)个负样本。  
+    推荐设置: 加入少量负样本训练 30 轮——neg_num=2; 重新训练或负样本很多时——neg_num=-1
 
 在 conda 环境下执行 python train.py，开始训练。
 
 ## 将 pt 模型转换为 rknn 模型
 
-安装[rknn_toolkit2](https://github.com/airockchip/rknn-toolkit2.git)环境，python 验证`from rknn.api import RKNN`安装成功。
+安装[rknn_toolkit](https://github.com/airockchip/rknn-toolkit)或[rknn_toolkit2](https://github.com/airockchip/rknn-toolkit2.git)环境，python 验证`from rknn.api import RKNN`安装成功。
 
-先激活 rknn 环境，再执行脚本将 pt 模型转换为 rknn 模型，onnx 模型和目标 rknn 模型将生成在同一目录下：
+-   rknn_toolkit: RK1808/RV1109/RV1126
+-   rknn_toolkit2: RK3588 Series/RK3576 Series/RK3566/RK3568 Series/RK3562 Series/RV1103/RV1106/RV1103B/RV1106B/RK2118
+
+对于 rk3588 平台，激活 `rknn_toolkit2`环境，再执行脚本将 pt 模型转换为 rknn 模型，onnx 模型和目标 rknn 模型将生成在同一目录下：
 
 ```sh
-./pt2rknn.sh <model_path>
+bash pt2rknn.sh <model_path> <platform>
+```
+
+对于 rv1126 平台，先将 pt 模型转为 onnx 模型，再激活 `rknn_toolkit` 环境，将 onnx 模型转换为 rknn 模型：
+
+_rknn_toolkit 依赖的 python3.6 环境不兼容 ultralytics，需要在 python3.8 以上的环境将 pt 模型转换为 onnx 模型。_
+
+```sh
+# pt2onnx
+$ cd path/to/ultralytics
+$ export PYTHONPATH=./
+$ python ./ultralytics/engine/exporter.py <model_path>
+# onnx2rknn
+$ cd path/to/onnx2rknn
+$ conda activate rknn-toolkit
+$ python convert.py <onnx_model_path> <platform> <output_rknn_path>
 ```
 
 ## rknn 模型的 mAP 精度验证
