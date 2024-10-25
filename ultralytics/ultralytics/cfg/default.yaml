@@ -5,7 +5,7 @@ task: detect # (str) YOLO task, i.e. detect, segment, classify, pose
 mode: train # (str) YOLO mode, i.e. train, val, predict, export, track, benchmark
 
 # Train settings -------------------------------------------------------------------------------------------------------
-model: /home/Niwenjin/Proj/mcrs/yolov8_rknn/model/yolov8n_flag_0926.pt # (str, optional) path to model file, i.e. yolov8n.pt, yolov8n.yaml
+model: yolov8n.pt # (str, optional) path to model file, i.e. yolov8n.pt, yolov8n.yaml
 data: # (str, optional) path to data file, i.e. coco8.yaml
 epochs: 100 # (int) number of epochs to train for
 time: # (float, optional) number of hours to train for, overrides epochs if supplied
@@ -17,7 +17,7 @@ save_period: -1 # (int) Save checkpoint every x epochs (disabled if < 1)
 cache: False # (bool) True/ram, disk or False. Use cache for data loading
 device: # (int | str | list, optional) device to run on, i.e. cuda device=0 or device=0,1,2,3 or device=cpu
 workers: 8 # (int) number of worker threads for data loading (per RANK if DDP)
-project: # (str, optional) project name
+project: 'runs/detect' # (str, optional) project name
 name: # (str, optional) experiment name, results saved to 'project/name' directory
 exist_ok: False # (bool) whether to overwrite existing experiment
 pretrained: True # (bool | str) whether to use a pretrained model (bool) or a model to load weights from (str)
@@ -124,3 +124,7 @@ cfg: # (str, optional) for overriding defaults.yaml
 
 # Tracker settings ------------------------------------------------------------------------------------------------------
 tracker: botsort.yaml # (str) tracker type, choices=[botsort.yaml, bytetrack.yaml]
+
+# neg settings ----------------------------------------------------------------------------------------------------------
+neg_dir: ''  # 负样本文件夹(str)，其中只有负样本图片，没有标签（默认为空）
+neg_num: 0   # 负样本加入个数(int)，设置加入一次马赛克的负样本数量[负数时为0-neg_num张负样本、正数时为放入固定neg_num张负样本]

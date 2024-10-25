@@ -3,13 +3,13 @@ from rknn.api import RKNN
 
 DATASET_PATH = 'dataset'
 DEFAULT_RKNN_PATH = 'model/yolov8.rknn'
-DEFAULT_QUANT = True
+DEFAULT_QUANT = False
 
 def parse_arg():
     if len(sys.argv) < 3:
         print("Usage: python3 {} onnx_model_path [platform] [dtype(optional)] [output_rknn_path(optional)]".format(sys.argv[0]));
-        print("       platform choose from [rk3562,rk3566,rk3568,rk3588,rk1808,rv1109,rv1126]")
-        print("       dtype choose from [i8, fp] for [rk3562,rk3566,rk3568,rk3588]")
+        print("       platform choose from [rk3562,rk3566,rk3568,rk3576,rk3588,rk1808,rv1109,rv1126]")
+        print("       dtype choose from [i8, fp] for [rk3562,rk3566,rk3568,rk3576,rk3588]")
         print("       dtype choose from [u8, fp] for [rk1808,rv1109,rv1126]")
         exit(1)
 
